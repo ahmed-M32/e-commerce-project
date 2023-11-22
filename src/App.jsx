@@ -2,8 +2,9 @@ import React from "react";
 
 
 
-export default function App(){
-<p>
+ function App(){
+return(<p>
     testing
-</p>
+</p>)
 };
+export default App;
