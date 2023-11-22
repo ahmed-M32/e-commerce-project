@@ -6,6 +6,6 @@ export default defineConfig({
   base:"/e-commerce-project/",
   plugins: [react()],
   build:{
-    outDir: "build"
+    outDir: "dist"
   }
 })
