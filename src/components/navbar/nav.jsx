@@ -1,30 +1,29 @@
 import "./nav.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
 	return (
 		<div className="barr">
 			<div className="mainNav ">
+			<div className="es">
+				<Link to = {"e-commerce-project/"}></Link>
 				<img
 					src="src\assets\shopping-and-ecommerce29.png"
 					alt=""
 					className="logo"
 				/>
 				<span className="e">E</span>-Shop
+				</div>
 				<div className="search">
-					<input className="bar" type="text" />
+					<input className="bar" type="text" placeholder="search for Products or Categories..." />
+					<button className="searchB"> 
+						<img src="src\assets\pngwing.com.png" className ="searchi" alt="" />
+					</button>
 				</div>
-				<div className=" category">
-					Products
-					<img
-						src="src\assets\186407_arrow_up_icon.png"
-						className="arrow"
-						alt=""
-					/>
+				<div className="cart">
+					<img src="src\assets\shopping-cart.png" className="cPng" alt="" />
 				</div>
-                <div className="cart">
-                <img src="src\assets\shopping-cart.png" className="cPng" alt="" />
-            </div>
 			</div>
 			<div className="secBar">
 				<div className="cats1">
@@ -36,7 +35,6 @@ function Navbar(props) {
 					</ul>
 				</div>
 			</div>
-            
 		</div>
 	);
 }

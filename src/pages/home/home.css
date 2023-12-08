@@ -1,0 +1,22 @@
+.mainPage{
+    width: 100%;
+}
+
+.caro{
+    height: 60%;
+}
+.ii{
+    height: 600px;
+    width: 100%;
+}
+.sw{
+    display: flex;
+    align-items: center;
+}
+.swiper-pager {
+    display: none;
+    bottom: -40px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    }
