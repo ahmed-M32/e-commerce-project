@@ -9,7 +9,7 @@ function Navbar(props) {
 			<div className="es">
 				<Link to = {"e-commerce-project/"}></Link>
 				<img
-					src="src\assets\shopping-and-ecommerce29.PNG"
+					src="./src\assets\shopping-and-ecommerce29.PNG"
 					alt=""
 					className="logo"
 				/>
