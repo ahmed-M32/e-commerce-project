@@ -9,7 +9,7 @@ function Navbar(props) {
 			<div className="es">
 				<Link to = {"e-commerce-project/"}></Link>
 				<img
-					src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/shopping-and-ecommerce29.png"
+					src="src\assets\shopping-and-ecommerce29.png"
 					alt=""
 					className="logo"
 				/>
@@ -22,7 +22,7 @@ function Navbar(props) {
 					</button>
 				</div>
 				<div className="cart">
-					<img src="src\assets\shopping-cart.png" className="cPng" alt="" />
+					<img src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/shopping-cart.png" className="cPng" alt="" />
 				</div>
 			</div>
 			<div className="secBar">
