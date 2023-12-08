@@ -17,14 +17,14 @@ export default function Swipeer() {
 			}}
 			className="sw">
 			<SwiperSlide>
-				<img src="src\assets\7035634.jpg" alt="" className="ii" />
+				<img src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/7035634.jpg" alt="" className="ii" />
 			</SwiperSlide>
 			<SwiperSlide>
-				<img src="src\assets\4555927.jpg" alt="" className="ii" />
+				<img src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/4555927.jpg" alt="" className="ii" />
 			</SwiperSlide>
 			<SwiperSlide>
 				<img
-					src="src\assets\image-spring-discount-sale-season-sale.jpg"
+					src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/image-spring-discount-sale-season-sale.jpg"
 					alt=""
 					className="ii"
 				/>
