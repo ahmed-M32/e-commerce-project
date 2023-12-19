@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import "./home.css";
+import "./swipe.css"
 
 export default function Swipeer() {
 	return (
@@ -12,6 +13,9 @@ export default function Swipeer() {
 			navigation={true}
 			loop={true}
 			modules={[Navigation, Autoplay]}
+			centeredSlides={true}
+			slidesPerView={'auto'}
+	
 			autoplay={{
 				delay: 4000,
 			}}
