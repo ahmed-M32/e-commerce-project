@@ -1,0 +1,31 @@
+.prod {
+	background-color: #f6f6f6;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 25%);
+	width: 80%;
+	justify-content: center;
+	padding: 20px;
+    gap: none;
+}
+.pPage {
+	height: 80%;
+}
+.pPage .pimg {
+	height: 60%;
+}
+.pPage a {
+	height: 100%;
+	width: 100%;
+}
+.filter {
+	width: 20%;
+	height: 50%;
+	background-color: #f6f6f6;
+}
+.mProduct{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+}

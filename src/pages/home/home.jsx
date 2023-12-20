@@ -4,25 +4,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 import Product from "../../products call/products";
 import Swipeer from "./swipe";
+import { useContext } from "react";
+import {apiD}  from "../../context/data";
+
+
 
 function Home() {
-	const getData = () => {
-		return axios.get("https://fakestoreapi.com/products").then((res) => {
-			const result = res.data;
-			return result;
-		});
-	};
-
-	const { isLoading, isError, data, error } = useQuery({
-		queryFn: getData,
-		queryKey: ["products"],
-		staleTime: 60000,
-	});
-
+	const { data,isLoading,isError,error} = useContext(apiD);
+	
 	if (isLoading) {
 		return <p>Loading...</p>;
 	}
@@ -34,7 +25,7 @@ function Home() {
 	if (!data) {
 		return null;
 	}
-	console.log(data[0]);
+	console.log(data);
 	return (
 		<>
 			<div className="mainPage">
@@ -68,33 +59,44 @@ function Home() {
 							<Product
 								title={data[0].title}
 								img={data[0].image}
-								price={data[0].price}></Product>
+								price={data[0].price}>
+									id = {data[0].id}
+								</Product>
 						</SwiperSlide>
 						<SwiperSlide>
 							<Product
 								title={data[1].title}
 								img={data[1].image}
-								price={data[1].price}></Product>
+								price={data[1].price}
+								id = {data[1].id}
+								></Product>
 						</SwiperSlide>
 						<SwiperSlide>
 							<Product
 								title={data[2].title}
 								img={data[2].image}
-								price={data[2].price}></Product>
+								price={data[2].price}
+								id = {data[2].id}
+								></Product>
 						</SwiperSlide>
 						<SwiperSlide>
 							<Product
 								title={data[3].title}
 								img={data[3].image}
-								price={data[3].price}></Product>
+								price={data[3].price}
+								id = {data[3].id}
+								></Product>
 						</SwiperSlide>
 						<SwiperSlide>
 							<Product
 								title={data[4].title}
 								img={data[4].image}
-								price={data[4].price}></Product>
+								price={data[4].price}
+								id = {data[4].id}
+								></Product>
 						</SwiperSlide>
 					</Swiper>
+					
 				</div>
 			</div>
 		</>
