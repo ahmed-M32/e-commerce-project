@@ -124,3 +124,7 @@
 	align-items: center;
 	color: black;
 }
+.l:hover{
+	color: #e56a77;
+	background-color: black;
+}

@@ -56,5 +56,9 @@
 	justify-content: flex-start;
     padding-left: 20px;
 }
+a{
+	text-decoration: none;
+	color: black;
+}
 
 

@@ -13,7 +13,7 @@ function Page() {
 	return (
 		<>
 			<div className="mProduct">
-				<div className="filter">a7a</div>
+				<div className="filter"></div>
 				<div className="prod">
 					{data.map((product) => (
 						<Product
