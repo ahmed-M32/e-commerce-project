@@ -32,8 +32,10 @@
 	padding: 10px;
 }
 .pi {
-	height: 100%;
-	width: 70%;
+	height: auto;
+	display: block;
+	max-width: 100%;
+	padding: 50px;
 }
 .product {
 	display: flex;
@@ -41,24 +43,24 @@
 	width: 60%;
 	height: 100%;
 	flex-direction: column;
-    margin: 30px;
+	margin: 30px;
 	border-radius: 10px;
-    transition: all .2s ease-in-out; 
+	
+	transition: all 0.2s ease-in-out;
 }
 .product:hover {
 	box-shadow: 5px 5px 10px grey;
-    transform: scale(1.1);
+	transform: scale(1.1);
 }
 .price {
 	display: flex;
 	width: 90%;
-    color: rgb(89, 88, 88);
+	color: rgb(89, 88, 88);
 	justify-content: flex-start;
-    padding-left: 20px;
+	padding-left: 20px;
 }
-a{
+a {
 	text-decoration: none;
 	color: black;
+	height: 100%;
 }
-
-
