@@ -15,8 +15,10 @@
 	align-items: center;
 }
 .ii {
-	height: 500px;
-	width: 100%;
+	height: auto;
+	display: block;
+	max-width: 70%;
+	padding: 50px;
 }
 .sw {
 	display: flex;

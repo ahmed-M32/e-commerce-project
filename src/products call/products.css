@@ -34,14 +34,14 @@
 .pi {
 	height: auto;
 	display: block;
-	max-width: 100%;
+	max-width: 65%;
 	padding: 50px;
 }
 .product {
 	display: flex;
 	background-color: white;
 	width: 60%;
-	height: 100%;
+	height: 90%;
 	flex-direction: column;
 	margin: 30px;
 	border-radius: 10px;

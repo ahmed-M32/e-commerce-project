@@ -17,6 +17,7 @@ function Page() {
 				<div className="prod">
 					{data.map((product) => (
 						<Product
+							path={`/e-commerce-project/products/${product.id}`}
 							className={"a"}
 							img={product.image}
 							title={product.title}

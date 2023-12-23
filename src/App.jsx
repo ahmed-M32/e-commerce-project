@@ -30,7 +30,7 @@ function App() {
 							element={<Page></Page>}></Route>
 						<Route
 							path="/e-commerce-project/products/:productid"
-							element={<Spage></Spage>}></Route>
+							element={<Spage></Spage>} exact= {false}></Route>
 
 
 					</Routes>
