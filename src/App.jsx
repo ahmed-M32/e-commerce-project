@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import Navbar from "./components/navbar/nav";
-import SyncLoader from "react-spinners/SyncLoader";
 import Home from "./pages/home/home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page from "./products call/page.jsx";

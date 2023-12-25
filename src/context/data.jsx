@@ -2,6 +2,8 @@ import React from "react";
 import { createContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import SyncLoader from "react-spinners/SyncLoader";
+
 
 const apiD = createContext();
 
@@ -19,7 +21,7 @@ const DataProvider = ({ children }) => {
 		staleTime: 60000,
 	});
     if (isLoading) {
-		return <p>Loading...</p>;
+		return <div className="load"><SyncLoader color="#e56a77"/></div>;
 	}
 
 	if (isError) {

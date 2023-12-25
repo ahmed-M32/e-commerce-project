@@ -6,7 +6,9 @@
 	background-color: #e56a77;
 	overflow: hidden;
 }
-
+.swiper-slide{
+	height:80%;
+}
 .caro {
 	height: 100%;
 	width: 100%;

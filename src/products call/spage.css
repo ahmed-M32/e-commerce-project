@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+
+.mProduct1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    margin: 50px;
+}
+.u{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color:#e56a77;
+}
+.g-img{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 50px;
+    flex-direction: column;
+}
+.a-cart{
+    cursor: pointer;
+    margin-top: 30px;
+    background-color: #e56a77;
+    border-radius: 20px;
+    text-align: center;
+    width: 60%;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease-in-out; 
+}
+.a-cart:hover{
+    transform: scale(1.1);
+}
+.sImg{
+    height: auto;
+    max-width: 70%;
+    display: block;
+}
+html{
+    height: fit-content;
+
+}
+
+.pTitle{
+    flex: 2;
+	font-family: "Rubik", sans-serif ;
+    width: 100%;
+    height: min-content;
+    margin-top: 70px;
+    margin-left: 10px;
+    font-size: 35px;
+    border-bottom: gray solid;
+    border-width: 90%;
+}
+.desc{
+    width: 90%;
+    margin: 40px;
+    color: grey;
+}
+.txt{
+    width: 40%;
+}
+.dT{
+    font-size: 30px;
+    color: black;
+}
+.pPrice{
+    margin-top: 70px ;
+    margin-left: 10px;
+    font-size: 30px;
+}
+.rate{
+    display: flex;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+.sss{
+    margin-right: 5px;
+    white-space: nowrap;
+}
+.ccc{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.category{
+    background-color:#e56a77;
+    color: black;
+    border-radius: 9px;
+    width: fit-content;
+    display: flex;
+    text-align: center;
+    padding: 5px;
+    margin-left: 5px;
+    transition: all .2s ease-in-out; 
+    cursor: pointer;
+}
+.category:hover{
+    transform: scale(1.1);
+}
