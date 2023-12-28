@@ -1,11 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import Spage from "./Spage";
 import { apiD } from "../context/data";
 import { useContext } from "react";
 import Product from "./products";
 import "./page.css";
-import Navbar from "../components/navbar/nav";
+/*import '../../dist/output.css'*/
 
 function Page() {
 	const { data, isLoading, isError, error } = useContext(apiD);

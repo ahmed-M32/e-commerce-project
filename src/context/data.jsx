@@ -4,11 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import SyncLoader from "react-spinners/SyncLoader";
 
-
 const apiD = createContext();
 
+
+
 const DataProvider = ({ children }) => {
-	const getData =  () => {
+	const getData = () => {
 		return axios.get("https://fakestoreapi.com/products").then((res) => {
 			const result = res.data;
 			return result;
@@ -20,22 +21,27 @@ const DataProvider = ({ children }) => {
 		queryKey: ["products"],
 		staleTime: 60000,
 	});
-    if (isLoading) {
-		return <div className="load"><SyncLoader color="#e56a77"/></div>;
-	}
 
+
+
+	if (isLoading) {
+		return (
+			<div className="load">
+				<SyncLoader color="#e56a77" />
+			</div>
+		);
+	}
 	if (isError) {
 		return <p>Error: {error.message}</p>;
 	}
-
 	if (!data) {
 		return null;
 	}
-	const  sharedData  = { isLoading, isError, data, error };
-    console.log(sharedData);
-	return (
-		<apiD.Provider value={sharedData}>{children}</apiD.Provider>
-	);
+
+	const ref ={"men's clothing":"men" , "women's clothing":"women"}
+
+	const sharedData = { isLoading, isError, data, error,ref };
+	return <apiD.Provider value={sharedData}>{children}</apiD.Provider>;
 };
 
-export{ DataProvider, apiD };
+export { DataProvider, apiD };

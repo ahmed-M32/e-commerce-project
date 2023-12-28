@@ -3,3 +3,11 @@
     justify-content: center;
     align-items: center;
 }
+.productPre.swiper-wrapper{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(50%,250px),1fr));
+    grid-template-rows: 1;
+	justify-content: center;
+    gap: none;
+    height: auto;
+}

@@ -77,7 +77,6 @@ function Home(props) {
 							},
 							768: {
 								slidesPerView: 4,
-								spaceBetween: 20,
 							},
 						}}
 						className="gr">

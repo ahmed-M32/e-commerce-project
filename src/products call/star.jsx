@@ -14,6 +14,8 @@ function Star(props){
 export default Star;*/
 
 import React from 'react';
+import '../../dist/output.css'
+
 import { FaStar } from 'react-icons/fa';
 import { FaRegStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
@@ -32,7 +34,7 @@ const Stars = (props) => {
   ));
 
   return (
-    <div>
+    <div className='flex flex-row'>
       {/* Render the stars array containing FaStar components */}
       {stars}
       {starsH}

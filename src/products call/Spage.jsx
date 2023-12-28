@@ -2,13 +2,13 @@ import React from "react";
 import { useContext } from "react";
 import { apiD } from "../context/data";
 import "./spage.css";
+import "../../dist/output.css";
 import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
-
-import { render } from "react-dom";
+import { Link } from "react-router-dom";
 
 function Spage(props) {
-	const { data, isLoading, isError, error } = useContext(apiD);
+	const { data, isLoading, isError, error ,ref} = useContext(apiD);
 	const pid = window.location.href.split("/").reverse()[0];
 
 	const r = data[pid - 1].rating.rate.toString().split(".");
@@ -25,14 +25,17 @@ function Spage(props) {
 				<div className={`mProduct1 ${data[pid - 1].category}`}>
 					<div className="g-img">
 						<img className="sImg" src={`${data[pid - 1].image}`} alt="" />
-						<div className="a-cart"><FaCartPlus />&nbsp;&nbsp;  add to cart  </div>
+						<div className="a-cart">
+							<FaCartPlus />
+							&nbsp;&nbsp; add to cart{" "}
+						</div>
 					</div>
 					<div className="txt">
 						<div className="pTitle">{data[pid - 1].title}</div>
 
 						<div className="pPrice">${data[pid - 1].price}</div>
 						<div className="rate">
-							<div className="sss">
+							<div className="sss flex flex-row">
 								<Stars
 									fullN={parseInt(r[0])}
 									halfN={r[1] != "0" ? 1 : 0}
@@ -42,7 +45,7 @@ function Spage(props) {
 						</div>
 						<div className="ccc">
 							category &nbsp; &nbsp;
-							<div className="category">{data[pid - 1].category}</div>
+							<div className="category"><Link to={`/e-commerce-project/${ref[data[pid - 1].category]}`}>{data[pid - 1].category}</Link></div>
 						</div>
 					</div>
 					<div className="desc">

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import '../../dist/output.css';
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import "./products.css";
@@ -11,7 +12,7 @@ function Product(props) {
 	const path1 = props.path
 	return (
 
-		<div className="product pPage">
+		<div className=" product pPage">
 			<Link to={path1}>
 				<div className="pimg">
 					<img src={props.img} alt="" className="pi" />

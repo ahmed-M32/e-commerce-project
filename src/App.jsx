@@ -10,6 +10,7 @@ import {
 	QueryClientProvider,
 	useQuery,
 } from "@tanstack/react-query";
+import Men from "./pages/men-products/men-products.jsx"
 const client1 = new QueryClient();
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
 
 
 						<Route path="/e-commerce-project" element={<Home />}></Route>
-						<Route path="/e-commerce-project/men" element={<men />}></Route>
+						<Route path="/e-commerce-project/men" element={<Men />}></Route>
 						<Route
 							path="/e-commerce-project/products"
 							element={<Page></Page>}></Route>
