@@ -1,10 +1,8 @@
 import React from "react";
-import axios from "axios";
 import '../../dist/output.css';
 import { useContext } from "react";
-import { useQuery } from "@tanstack/react-query";
 import "./products.css";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { apiD } from "../context/data";
 
 function Product(props) {

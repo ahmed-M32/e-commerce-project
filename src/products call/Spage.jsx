@@ -2,7 +2,6 @@ import React from "react";
 import { useContext } from "react";
 import { apiD } from "../context/data";
 import "./spage.css";
-import "../../dist/output.css";
 import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -15,7 +14,6 @@ function Spage(props) {
 	if (r.length == 1) {
 		r.push("0");
 	}
-	const rateStar = [];
 
 	console.log(r);
 
