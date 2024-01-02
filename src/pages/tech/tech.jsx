@@ -5,7 +5,7 @@ import "../../index.css";
 import SyncLoader from "react-spinners/SyncLoader";
 import Product from "../../products call/products";
 
-function Men() {
+function Tech() {
 	const { data, isLoading, isError, error } = useContext(apiD);
 
 	if (isLoading) {
@@ -23,9 +23,9 @@ function Men() {
 	return (
 		<div className="container w-full flex h-full flex-row">
 			
-			<div className="grid w-full lg:grid-cols-5 sm:grid-cols-2 xl:grid-cols-4 ">
+			<div className="grid w-full  h-fit lg:grid-cols-5 sm:grid-cols-2 xl:grid-cols-4 ">
 				{data.map((product) => {
-					return product.category === "men's clothing" ? (
+					return product.category === "electronics" ? (
 						<Product
 							className="card"
 							path={`/e-commerce-project/products/${product.id}`}
@@ -41,4 +41,4 @@ function Men() {
 		</div>
 	);
 }
-export default Men;
+export default Tech;

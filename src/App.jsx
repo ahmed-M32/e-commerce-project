@@ -10,7 +10,16 @@ import {
 	QueryClientProvider,
 	useQuery,
 } from "@tanstack/react-query";
+import '../dist/output.css'
+import './index.css';
+import 'tailwindcss/tailwind.css'; // Import Tailwind CSS here
+
 import Men from "./pages/men-products/men-products.jsx"
+import Women from "./pages/women-products/women.jsx"
+import Tech from "./pages/tech/tech.jsx"
+import Jewelery from "./pages/jewelery/jewelery.jsx";
+
+
 const client1 = new QueryClient();
 
 function App() {
@@ -25,6 +34,12 @@ function App() {
 
 						<Route path="/e-commerce-project" element={<Home />}></Route>
 						<Route path="/e-commerce-project/men" element={<Men />}></Route>
+						<Route path="/e-commerce-project/women" element={<Women />}></Route>
+						<Route path="/e-commerce-project/tech" element={<Tech />}></Route>
+						<Route path="/e-commerce-project/jewelery" element={<Jewelery />}></Route>
+
+
+
 						<Route
 							path="/e-commerce-project/products"
 							element={<Page></Page>}></Route>

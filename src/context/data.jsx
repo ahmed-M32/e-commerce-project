@@ -6,8 +6,6 @@ import SyncLoader from "react-spinners/SyncLoader";
 
 const apiD = createContext();
 
-
-
 const DataProvider = ({ children }) => {
 	const getData = () => {
 		return axios.get("https://fakestoreapi.com/products").then((res) => {
@@ -21,8 +19,6 @@ const DataProvider = ({ children }) => {
 		queryKey: ["products"],
 		staleTime: 60000,
 	});
-
-
 
 	if (isLoading) {
 		return (
@@ -38,9 +34,14 @@ const DataProvider = ({ children }) => {
 		return null;
 	}
 
-	const ref ={"men's clothing":"men" , "women's clothing":"women"}
+	const ref = {
+		"men's clothing": "men",
+		"women's clothing": "women",
+		jewelery: "jewelery",
+		electronics: "tech",
+	};
 
-	const sharedData = { isLoading, isError, data, error,ref };
+	const sharedData = { isLoading, isError, data, error, ref };
 	return <apiD.Provider value={sharedData}>{children}</apiD.Provider>;
 };
 

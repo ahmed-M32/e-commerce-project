@@ -81,6 +81,7 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
+	cursor: pointer;
  
 }
 .cats li:hover{
@@ -118,7 +119,7 @@
 	width: 20px;
 }
 
-.l{
+.l1{
 	text-decoration: none;
 	display: flex;
 	align-items: center;

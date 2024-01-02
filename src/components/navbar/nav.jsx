@@ -7,7 +7,7 @@ function Navbar(props) {
 		<div className="barr">
 			<div className="mainNav ">
 				<div className="es">
-					<Link to={"e-commerce-project/"} className="l">
+					<Link to={"e-commerce-project/"} className="l1">
 						<img
 							src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/shopping-and-ecommerce29.png"
 							alt=""
@@ -48,11 +48,20 @@ function Navbar(props) {
 						</li>
 						<li>
 							{" "}
-							<Link to={"e-commerce-project/men"}>Men's Clothing</Link>
+							<Link to={"e-commerce-project/men"} className="l">Men's Clothing</Link>
 						</li>
-						<li>Women's Clothing</li>
-						<li>Electronics</li>
-						<li>jewelry</li>
+						<li>
+						<Link to={"e-commerce-project/women"} className="l">Women's Clothing</Link>
+
+						</li>
+						<li>
+						<Link to={"e-commerce-project/tech"} className="l">Electronics</Link>
+
+						</li>
+						<li>
+						<Link to={"e-commerce-project/jewelery"} className="l">Jewelery</Link>
+
+						</li>
 					</ul>
 				</div>
 			</div>

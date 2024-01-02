@@ -45,7 +45,7 @@
 	background-color: white;
 }
 .swiper-slide{
-	height: auto;
+	height: auto !important;
 }
 .text{
 	font-size: 40px;
