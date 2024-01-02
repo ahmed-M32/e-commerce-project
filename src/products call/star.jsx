@@ -1,21 +1,4 @@
-/*import { FaStar } from "react-icons/fa";
-
-import React from "react";
-
-
-function Star(props){
-    retturn(
-        <div>
-            
-        </div>
-    )
-}
-
-export default Star;*/
-
 import React from 'react';
-import '../../dist/output.css'
-
 import { FaStar } from 'react-icons/fa';
 import { FaRegStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
