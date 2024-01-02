@@ -1,5 +1,4 @@
 import React from "react";
-import '../../dist/output.css';
 import { useContext } from "react";
 import "./products.css";
 import { Link } from "react-router-dom";
