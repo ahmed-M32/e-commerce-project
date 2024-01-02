@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { apiD } from "../../context/data";
 import "../../index.css";
 import SyncLoader from "react-spinners/SyncLoader";
+
 import Product from "../../products call/products";
 
 function Tech() {
