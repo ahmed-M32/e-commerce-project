@@ -10,7 +10,6 @@ import {
 	QueryClientProvider,
 	useQuery,
 } from "@tanstack/react-query";
-import '../dist/output.css'
 import './index.css';
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS here
 
