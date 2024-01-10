@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { apiD } from "../context/data";
 import "./spage.css";
@@ -7,16 +7,14 @@ import { FaCartPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 function Spage(props) {
-	const { data, isLoading, isError, error ,ref} = useContext(apiD);
+	const { data, isLoading, isError, error, ref } = useContext(apiD);
 	const pid = window.location.href.split("/").reverse()[0];
 
 	const r = data[pid - 1].rating.rate.toString().split(".");
 	if (r.length == 1) {
 		r.push("0");
 	}
-
-	console.log(r);
-
+	
 	return (
 		<>
 			<div className="u">
@@ -43,7 +41,11 @@ function Spage(props) {
 						</div>
 						<div className="ccc">
 							category &nbsp; &nbsp;
-							<div className="category"><Link to={`/e-commerce-project/${ref[data[pid - 1].category]}`}>{data[pid - 1].category}</Link></div>
+							<div className="category">
+								<Link to={`/e-commerce-project/${ref[data[pid - 1].category]}`}>
+									{data[pid - 1].category}
+								</Link>
+							</div>
 						</div>
 					</div>
 					<div className="desc">

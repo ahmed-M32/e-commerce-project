@@ -1,8 +1,39 @@
 import "./nav.css";
-import React from "react";
+import React, { createContext } from "react";
 import { Link } from "react-router-dom";
+import SearchBarr from "../searchBar/searchBar";
+import { useContext, useState } from "react";
+import { apiD } from "../../context/data";
+
+const searchProduct = createContext([]);
 
 function Navbar(props) {
+	const con = useContext(apiD);
+
+	const searchvalue = ({ children }) => {
+		const [myData, setMyData] = useState(filteredItems);
+
+		return (
+			<searchProduct.Provider value={{ myData, setMyData }}>
+				{children}
+			</searchProduct.Provider>
+		);
+	};
+	const [filteredItems, setFilteredItems] = useState([]);
+	function search(e) {
+		const value = e.target.value;
+
+		con.data.filter((product) => {
+			if (
+				(product.title.toLowerCase().includes(value) ||
+					product.category.toLowerCase().includes(value)) &&
+				!filteredItems.includes(product)
+			) {
+				setFilteredItems([...filteredItems, product]);
+			}
+		});
+	}
+
 	return (
 		<div className="barr">
 			<div className="mainNav ">
@@ -18,16 +49,22 @@ function Navbar(props) {
 				</div>
 				<div className="search">
 					<input
-						className="bar"
 						type="text"
-						placeholder="search for Products or Categories..."
+						placeholder="search products by name or category...."
+						className="bar w-11/12 m-2 appearance-none border-none bg-transparent focus:outline-none"
+						onClick={search}
 					/>
 					<button className="searchB">
-						<img
-							src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/pngwing.com.png"
-							className="searchi"
-							alt=""
-						/>
+						<Link
+							to={{
+								pathname: "e-commerce-project/search",
+							}}>
+							<img
+								src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/pngwing.com.png"
+								className="searchi"
+								alt=""
+							/>
+						</Link>
 					</button>
 				</div>
 				<div className="cart">
@@ -48,19 +85,24 @@ function Navbar(props) {
 						</li>
 						<li>
 							{" "}
-							<Link to={"e-commerce-project/men"} className="l">Men's Clothing</Link>
+							<Link to={"e-commerce-project/men"} className="l">
+								Men's Clothing
+							</Link>
 						</li>
 						<li>
-						<Link to={"e-commerce-project/women"} className="l">Women's Clothing</Link>
-
+							<Link to={"e-commerce-project/women"} className="l">
+								Women's Clothing
+							</Link>
 						</li>
 						<li>
-						<Link to={"e-commerce-project/tech"} className="l">Electronics</Link>
-
+							<Link to={"e-commerce-project/tech"} className="l">
+								Electronics
+							</Link>
 						</li>
 						<li>
-						<Link to={"e-commerce-project/jewelery"} className="l">Jewelery</Link>
-
+							<Link to={"e-commerce-project/jewelery"} className="l">
+								Jewelery
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -69,4 +111,4 @@ function Navbar(props) {
 	);
 }
 
-export default Navbar;
+export { Navbar, searchProduct };

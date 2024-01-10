@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import Navbar from "./components/navbar/nav";
+import {Navbar} from "./components/navbar/nav";
 import Home from "./pages/home/home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page from "./products call/page.jsx";
@@ -17,6 +17,7 @@ import Men from "./pages/men-products/men-products.jsx"
 import Women from "./pages/women-products/women.jsx"
 import Tech from "./pages/tech/tech.jsx"
 import Jewelery from "./pages/jewelery/jewelery.jsx";
+import SearchBarr from "./components/searchBar/searchBar.jsx";
 
 
 const client1 = new QueryClient();
@@ -46,6 +47,7 @@ function App() {
 							path="/e-commerce-project/products/:productid"
 							element={<Spage></Spage>} exact= {false}></Route>
 
+						<Route path="/e-commerce-project/search"  element={<SearchBarr />}></Route>
 
 					</Routes>
 				</DataProvider>

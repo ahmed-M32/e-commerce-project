@@ -1,8 +1,8 @@
 import React from "react";
+import "../../index.css";
 import "./home.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SyncLoader from "react-spinners/SyncLoader";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -11,12 +11,11 @@ import Swipeer from "./swipe";
 import { useContext } from "react";
 import { apiD } from "../../context/data";
 
-function Home(props) {
+function Home() {
 	const { data, isLoading, isError, error } = useContext(apiD);
-	const path1 = props.path;
 
 	if (isLoading) {
-		return <SyncLoader></SyncLoader>;
+		return <SyncLoader className="flex items-center"></SyncLoader>;
 	}
 
 	if (isError) {
@@ -54,7 +53,7 @@ function Home(props) {
 	console.log(data);
 	return (
 		<>
-			<div className="mainPage">
+			<div className="mainPage main">
 				<div className="caro">
 					<Swipeer></Swipeer>
 				</div>

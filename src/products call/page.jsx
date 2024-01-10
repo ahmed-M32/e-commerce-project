@@ -1,12 +1,13 @@
 import React from "react";
 import { apiD } from "../context/data";
-import { useContext } from "react";
+import { useContext ,useState} from "react";
 import Product from "./products";
 import "./page.css";
 /*import '../../dist/output.css'*/
 
 function Page() {
 	const { data, isLoading, isError, error } = useContext(apiD);
+	const [search,setSearch] = useState(true);
 
 	return (
 		<>

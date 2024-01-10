@@ -16,7 +16,7 @@
     background-color:#e56a77;
 }
 .g-img{
-    height: 10%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
