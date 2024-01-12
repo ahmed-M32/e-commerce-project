@@ -1,7 +1,7 @@
 import "./nav.css";
 import React, { createContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useContext, useState  } from "react";
+import { useContext, useState } from "react";
 import { apiD } from "../../context/data";
 import { SearchProduct } from "../../context/search-context/search";
 
@@ -9,9 +9,7 @@ function Navbar(props) {
 	const con = useContext(apiD);
 
 	const { data, updateData } = useContext(SearchProduct);
-	const [filteredItems, setFilteredItems] = useState([]);
 	const [searchQuery, setSearchQuery] = useState("");
-	const isMounted = useRef(false)
 	function search() {
 		const value = searchQuery.toLowerCase();
 		const filtered = con.data.filter((product) => {
@@ -21,17 +19,17 @@ function Navbar(props) {
 			);
 		});
 
-		setFilteredItems(filtered);
 		updateData(filtered);
 	}
-
-	/*useEffect(() => {
-		if (isMounted.current && filteredItems.length > 0) {
-			updateData(filtered);
-		} else {
-			isMounted.current = true;
+	const handleKeyDown = (event) => {
+		if (event.key === "Enter") {
+			search();
+			// Perform the action you want here
+			// You can also prevent the default behavior (e.g., form submission)
+			// by uncommenting the next line:
+			// event.preventDefault();
 		}
-	}, [filteredItems]);*/
+	};
 
 	const setSearch = (e) => {
 		setSearchQuery(e.target.value);
@@ -55,6 +53,7 @@ function Navbar(props) {
 						placeholder="search products by name or category...."
 						className="bar w-11/12 m-2 appearance-none border-none bg-transparent focus:outline-none"
 						onChange={setSearch}
+						onKeyDown={handleKeyDown}
 					/>
 					<button className="searchB" onClick={search}>
 						<Link
