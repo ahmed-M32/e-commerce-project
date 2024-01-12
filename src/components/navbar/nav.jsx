@@ -1,39 +1,41 @@
 import "./nav.css";
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import SearchBarr from "../searchBar/searchBar";
-import { useContext, useState } from "react";
+import { useContext, useState  } from "react";
 import { apiD } from "../../context/data";
-
-const searchProduct = createContext([]);
+import { SearchProduct } from "../../context/search-context/search";
 
 function Navbar(props) {
 	const con = useContext(apiD);
 
-	const searchvalue = ({ children }) => {
-		const [myData, setMyData] = useState(filteredItems);
-
-		return (
-			<searchProduct.Provider value={{ myData, setMyData }}>
-				{children}
-			</searchProduct.Provider>
-		);
-	};
+	const { data, updateData } = useContext(SearchProduct);
 	const [filteredItems, setFilteredItems] = useState([]);
-	function search(e) {
-		const value = e.target.value;
-
-		con.data.filter((product) => {
-			if (
-				(product.title.toLowerCase().includes(value) ||
-					product.category.toLowerCase().includes(value)) &&
-				!filteredItems.includes(product)
-			) {
-				setFilteredItems([...filteredItems, product]);
-			}
+	const [searchQuery, setSearchQuery] = useState("");
+	const isMounted = useRef(false)
+	function search() {
+		const value = searchQuery.toLowerCase();
+		const filtered = con.data.filter((product) => {
+			return (
+				product.title.toLowerCase().includes(value) ||
+				product.category.toLowerCase().includes(value)
+			);
 		});
+
+		setFilteredItems(filtered);
+		updateData(filtered);
 	}
 
+	/*useEffect(() => {
+		if (isMounted.current && filteredItems.length > 0) {
+			updateData(filtered);
+		} else {
+			isMounted.current = true;
+		}
+	}, [filteredItems]);*/
+
+	const setSearch = (e) => {
+		setSearchQuery(e.target.value);
+	};
 	return (
 		<div className="barr">
 			<div className="mainNav ">
@@ -52,9 +54,9 @@ function Navbar(props) {
 						type="text"
 						placeholder="search products by name or category...."
 						className="bar w-11/12 m-2 appearance-none border-none bg-transparent focus:outline-none"
-						onClick={search}
+						onChange={setSearch}
 					/>
-					<button className="searchB">
+					<button className="searchB" onClick={search}>
 						<Link
 							to={{
 								pathname: "e-commerce-project/search",
@@ -111,4 +113,4 @@ function Navbar(props) {
 	);
 }
 
-export { Navbar, searchProduct };
+export { Navbar };

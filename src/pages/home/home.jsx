@@ -14,38 +14,40 @@ import { apiD } from "../../context/data";
 function Home() {
 	const { data, isLoading, isError, error } = useContext(apiD);
 
+
+
 	if (isLoading) {
 		return <SyncLoader className="flex items-center"></SyncLoader>;
 	}
-
 	if (isError) {
 		return <p>Error: {error.message}</p>;
 	}
-
 	if (!data) {
 		return null;
 	}
 	function rInt(min, max) {
 		const usedNumbers = [];
 
+
 		function generate() {
 			if (usedNumbers.length === max - min + 1) {
 				return null;
 			}
-
 			let randomNumber;
 			do {
 				randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 			} while (usedNumbers.includes(randomNumber));
 
+
 			usedNumbers.push(randomNumber);
 			return randomNumber;
 		}
-
 		return generate;
 	}
 
 	var g = rInt(0, 19);
+
+
 	const arr = [];
 	for (let i = 0; i < 5; i++) {
 		arr.push(g());
@@ -55,7 +57,7 @@ function Home() {
 		<>
 			<div className="mainPage main">
 				<div className="caro">
-					<Swipeer></Swipeer>
+					<Swipeer/>
 				</div>
 				<div className="gap"></div>
 				<div className="productPre">
