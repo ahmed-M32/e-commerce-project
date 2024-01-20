@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page from "./products call/page.jsx";
 import Spage from "./products call/Spage.jsx";
 import { DataProvider } from "../src/context/data.jsx";
-import {MyContextProvider} from "../src/context/search-context/search.jsx";
+import { MyContextProvider } from "../src/context/search-context/search.jsx";
+import { CartContextProvider } from "./context/cart-context.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 import "tailwindcss/tailwind.css";
@@ -14,6 +15,7 @@ import Women from "./pages/women-products/women.jsx";
 import Tech from "./pages/tech/tech.jsx";
 import Jewelery from "./pages/jewelery/jewelery.jsx";
 import SearchBarr from "./components/searchBar/searchBar.jsx";
+import Cart from "./pages/cart/cart.jsx";
 
 const client1 = new QueryClient();
 
@@ -22,33 +24,40 @@ function App() {
 		<QueryClientProvider client={client1}>
 			<BrowserRouter>
 				<MyContextProvider>
-					<DataProvider>
-						<Navbar />
+					<CartContextProvider>
+						<DataProvider>
+							<Navbar />
 
-						<Routes>
-							<Route path="/e-commerce-project" element={<Home />}></Route>
-							<Route path="/e-commerce-project/men" element={<Men />}></Route>
-							<Route
-								path="/e-commerce-project/women"
-								element={<Women />}></Route>
-							<Route path="/e-commerce-project/tech" element={<Tech />}></Route>
-							<Route
-								path="/e-commerce-project/jewelery"
-								element={<Jewelery />}></Route>
+							<Routes>
+								<Route path="/e-commerce-project" element={<Home />}></Route>
+								<Route path="/e-commerce-project/men" element={<Men />}></Route>
+								<Route
+									path="/e-commerce-project/women"
+									element={<Women />}></Route>
+								<Route
+									path="/e-commerce-project/tech"
+									element={<Tech />}></Route>
+								<Route
+									path="/e-commerce-project/jewelery"
+									element={<Jewelery />}></Route>
 
-							<Route
-								path="/e-commerce-project/products"
-								element={<Page></Page>}></Route>
-							<Route
-								path="/e-commerce-project/products/:productid"
-								element={<Spage></Spage>}
-								exact={false}></Route>
+								<Route
+									path="/e-commerce-project/products"
+									element={<Page></Page>}></Route>
+								<Route
+									path="/e-commerce-project/products/:productid"
+									element={<Spage></Spage>}
+									exact={false}></Route>
 
-							<Route
-								path="/e-commerce-project/search"
-								element={<SearchBarr />}></Route>
-						</Routes>
-					</DataProvider>
+								<Route
+									path="/e-commerce-project/search"
+									element={<SearchBarr />}></Route>
+								<Route
+									path="/e-commerce-project/cart"
+									element={<Cart />}></Route>
+							</Routes>
+						</DataProvider>
+					</CartContextProvider>
 				</MyContextProvider>
 			</BrowserRouter>
 		</QueryClientProvider>

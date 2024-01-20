@@ -5,23 +5,28 @@ import "./spage.css";
 import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/cart-context";
 
 function Spage(props) {
 	const { data, isLoading, isError, error, ref } = useContext(apiD);
+	const { updateCart,addToLocalStorage } = useContext(CartContext);
 	const pid = window.location.href.split("/").reverse()[0];
 
 	const r = data[pid - 1].rating.rate.toString().split(".");
 	if (r.length == 1) {
 		r.push("0");
 	}
-	
+	const handleClick = () => {
+		addToLocalStorage(data[pid-1])
+	};
+
 	return (
 		<>
 			<div className="u">
 				<div className={`mProduct1 ${data[pid - 1].category}`}>
 					<div className="g-img">
 						<img className="sImg" src={`${data[pid - 1].image}`} alt="" />
-						<div className="a-cart">
+						<div className="a-cart" onClick={handleClick}>
 							<FaCartPlus />
 							&nbsp;&nbsp; add to cart{" "}
 						</div>

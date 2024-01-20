@@ -5,7 +5,6 @@ import { FaStarHalfAlt } from "react-icons/fa";
 const Stars = (props) => {
     const{fullN,halfN,noN} = props;
 
-    console.log(fullN,halfN,noN);
   const stars = Array.from({ length: fullN }).map((_, index) => (
     <FaStar key={index} /> 
   ));

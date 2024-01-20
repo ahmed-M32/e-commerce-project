@@ -5,11 +5,12 @@ import { useContext, useState } from "react";
 import { apiD } from "../../context/data";
 import { SearchProduct } from "../../context/search-context/search";
 
-function Navbar(props) {
+function Navbar() {
 	const con = useContext(apiD);
 
 	const { data, updateData } = useContext(SearchProduct);
 	const [searchQuery, setSearchQuery] = useState("");
+
 	function search() {
 		const value = searchQuery.toLowerCase();
 		const filtered = con.data.filter((product) => {
@@ -21,6 +22,7 @@ function Navbar(props) {
 
 		updateData(filtered);
 	}
+
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {
 			search();
@@ -34,6 +36,7 @@ function Navbar(props) {
 	const setSearch = (e) => {
 		setSearchQuery(e.target.value);
 	};
+
 	return (
 		<div className="barr">
 			<div className="mainNav ">
@@ -69,11 +72,13 @@ function Navbar(props) {
 					</button>
 				</div>
 				<div className="cart">
-					<img
-						src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/shopping-cart.png"
-						className="cPng"
-						alt=""
-					/>
+					<Link to={"e-commerce-project/cart"}>
+						<img
+							src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/shopping-cart.png"
+							className="cPng"
+							alt=""
+						/>
+					</Link>
 				</div>
 			</div>
 			<div className="secBar">
