@@ -3,20 +3,84 @@ import { useContext, useRef, useEffect } from "react";
 import { CartContext } from "../../context/cart-context";
 import "./cart.css";
 import { Link } from "react-router-dom";
-import Product from "../../products call/products";
+
 const Cart = () => {
 	const { updateCart, cartItems } = useContext(CartContext);
 	const [item, setItems] = useState([]);
-	const [counter, setCounter] = useState();
-	const change = (s) => {
-		setItems(s);
+	const [prices, setPrice] = useState(0);
+
+	const CartItem = (props) => {
+		const { img, title, id, price, obj, product1, func } = props;
+
+		const [counter, setCounter] = useState(obj);
+
+		function increment() {
+			let arr = JSON.parse(localStorage.getItem("cart"));
+			arr.push(product1);
+
+			setPrice((prev) => Math.round(((prev + price) * 100) )/100);
+
+			func(arr);
+			localStorage.setItem("cart", JSON.stringify(arr));
+		}
+
+		function decrement() {
+			let arr = JSON.parse(localStorage.getItem("cart"));
+			let index = -1;
+
+			if (item.length == 0) {
+				setPrice(0);
+			}
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i].title === title) {
+					index = i;
+					break;
+				}
+			}
+			if (index != -1) {
+				arr.splice(index, 1);
+
+				setPrice((prev) => Math.round(((prev - price) * 100) )/100);
+
+				func(arr);
+
+				localStorage.setItem("cart", JSON.stringify(arr));
+			}
+		}
+
+		return (
+			<div className="p">
+				<div className="cartr">
+					{" "}
+					<Link to={`/e-commerce-project/products/${id}`}>
+						<img src={img} alt="" className=" cart-img" />
+					</Link>
+				</div>
+				<div className="titlee"> {title}</div>
+				<div className="cart-price">price : ${price}</div>
+				<button className="add-button" onClick={increment}>
+					+
+				</button>
+				<div className="quantity"> quantity : {counter}</div>
+				<button className="remove-button" onClick={decrement}>
+					-
+				</button>
+			</div>
+		);
 	};
+
 	useEffect(() => {
 		if (localStorage.getItem("cart")) {
 			let getLocalStorageItems = JSON.parse(localStorage.getItem("cart"));
-			change(getLocalStorageItems);
+			setItems(getLocalStorageItems);
+			let totalPrice = 0;
+			getLocalStorageItems.forEach((product) => {
+				totalPrice += product.price;
+			});
+			setPrice(totalPrice);
 		}
 	}, []);
+
 	const countItems = (items) => {
 		const filteredArray = item.filter((e) => {
 			return e.title == items.title;
@@ -24,15 +88,6 @@ const Cart = () => {
 
 		return filteredArray.length;
 	};
-
-
-	function increment(){
-
-	}
-	function decrement(){
-
-	}
-
 	let obj = {};
 	let unique = {};
 	let uniqueA = [];
@@ -48,28 +103,33 @@ const Cart = () => {
 	for (let i in unique) {
 		uniqueA.push(unique[i]);
 	}
-	console.log(uniqueA);
+
 	return (
-		<div className="cart-grid grid w-full">
-			{uniqueA.map((product) => {
-				return (
-					<div className="p" >
-						<div className="cartr">
-							{" "}
-						<Link to ={`/e-commerce-project/products/${product.id}`}>
+		<div className="main-cart ">
+			<div className="cart-grid grid w-full">
+				{uniqueA.map((product) => {
+					return (
+						<CartItem
+							img={product.image}
+							title={product.title}
+							id={product.id}
+							price={product.price}
+							obj={obj[product.title]}
+							product1={product}
+							func={setItems}></CartItem>
+					);
+				})}
+			</div>
+			<div className="total">
+				<div className="total-items">
+					<span className="main-title"> Total items </span>
 
-							<img src={`${product.image}`} alt=""className=" cart-img" />
-						</Link>
-
-						</div>
-						<div className="titlee"> {product.title}</div>
-						<div className="cart-price">price : ${product.price}</div>
-						<button className="add b" onClick={increment}>+</button>
-						<div className="quantity"> quantity : {obj[product.title]}</div>
-						<button className="minus b" onClick={decrement}>-</button>
+					<div>
+						total price:
+						{prices}
 					</div>
-				);
-			})}
+				</div>
+			</div>
 		</div>
 	);
 };
