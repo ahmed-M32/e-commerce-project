@@ -25,7 +25,6 @@ function Navbar() {
 		updateData(filtered);
 	}
 
-	
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {
 			search();

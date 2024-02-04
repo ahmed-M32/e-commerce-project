@@ -24,7 +24,9 @@ function Spage() {
 	const handleClick = () => {
 		toast.success("an item was added")
 		addToLocalStorage(data[pid - 1]);
+		if(localStorage.getItem("cart")){
 		setCartCounter(JSON.parse(localStorage.getItem("cart")).length);
+	}
 	};
 
 	
