@@ -90,7 +90,8 @@
     transform: scale(1.3);
 }
 .cart{
-   /* padding-left:300px ;*/
+height: 40px;
+width: 40px;
 }
 .cPng{
     height:40px;
@@ -129,4 +130,22 @@
 .l:hover{
 	color: #e56a77;
 	background-color: black;
+}
+.cart-counter{
+	background-color: red;
+	position: absolute;
+	border-radius: 100%;
+	width: 1rem;
+	height: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	top: .3rem;
+	right: 7rem;
+}
+
+
+.n{
+	display: none;
 }

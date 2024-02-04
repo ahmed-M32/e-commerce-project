@@ -11,3 +11,7 @@
     gap: none;
     height: auto;
 }
+
+.swiper-button-prev{
+    color: black;
+}

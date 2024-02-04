@@ -6,13 +6,11 @@ import "./page.css";
 /*import '../../dist/output.css'*/
 
 function Page() {
-	const { data, isLoading, isError, error } = useContext(apiD);
-	const [search,setSearch] = useState(true);
+	const { data } = useContext(apiD);
 
 	return (
 		<>
 			<div className="mProduct">
-				<div className="filter"></div>
 				<div className="prod">
 					{data.map((product) => (
 						<Product

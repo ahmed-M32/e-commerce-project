@@ -3,10 +3,12 @@ import React, { createContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { apiD } from "../../context/data";
+import { CartContext } from "../../context/cart-context";
 import { SearchProduct } from "../../context/search-context/search";
 
 function Navbar() {
 	const con = useContext(apiD);
+	const { cartCounter, counterState, setCartCounter } = useContext(CartContext);
 
 	const { data, updateData } = useContext(SearchProduct);
 	const [searchQuery, setSearchQuery] = useState("");
@@ -23,13 +25,10 @@ function Navbar() {
 		updateData(filtered);
 	}
 
+	
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {
 			search();
-			// Perform the action you want here
-			// You can also prevent the default behavior (e.g., form submission)
-			// by uncommenting the next line:
-			// event.preventDefault();
 		}
 	};
 
@@ -78,6 +77,10 @@ function Navbar() {
 							className="cPng"
 							alt=""
 						/>
+
+						<span className={cartCounter == 0 ? "n" : "cart-counter"}>
+							{cartCounter}
+						</span>
 					</Link>
 				</div>
 			</div>

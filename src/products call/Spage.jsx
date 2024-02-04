@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { apiD } from "../context/data";
 import "./spage.css";
@@ -6,10 +6,15 @@ import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cart-context";
+import { Toaster, toast } from 'sonner'
 
-function Spage(props) {
-	const { data, isLoading, isError, error, ref } = useContext(apiD);
-	const { updateCart,addToLocalStorage } = useContext(CartContext);
+
+
+function Spage() {
+	const { data, ref } = useContext(apiD);
+
+	const { addToLocalStorage, setCartCounter, setCounterState, cartCounter } =
+		useContext(CartContext);
 	const pid = window.location.href.split("/").reverse()[0];
 
 	const r = data[pid - 1].rating.rate.toString().split(".");
@@ -17,12 +22,16 @@ function Spage(props) {
 		r.push("0");
 	}
 	const handleClick = () => {
-		addToLocalStorage(data[pid-1])
+		toast.success("an item was added")
+		addToLocalStorage(data[pid - 1]);
+		setCartCounter(JSON.parse(localStorage.getItem("cart")).length);
 	};
 
+	
 	return (
 		<>
 			<div className="u">
+				<Toaster position="top-center" richColors></Toaster>
 				<div className={`mProduct1 ${data[pid - 1].category}`}>
 					<div className="g-img">
 						<img className="sImg" src={`${data[pid - 1].image}`} alt="" />

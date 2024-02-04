@@ -17,7 +17,7 @@ function Home() {
 
 
 	if (isLoading) {
-		return <SyncLoader className="flex items-center"></SyncLoader>;
+		return <SyncLoader className="loading"></SyncLoader>;
 	}
 	if (isError) {
 		return <p>Error: {error.message}</p>;

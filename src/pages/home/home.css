@@ -5,6 +5,7 @@
 	height: fit-content;
 	background-color: #e56a77;
 	overflow: hidden;
+	font-weight: 500;
 }
 .gr{
 	width: 100%;
@@ -16,6 +17,9 @@
 	max-width: 100%;
 	overflow: hidden;
 	align-items: center;
+	background-image: url("../../assets/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .ii {
 	height: auto;
@@ -50,4 +54,13 @@
 .text{
 	font-size: 40px;
 	background-color: aliceblue;
+}
+
+.load
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
 }
