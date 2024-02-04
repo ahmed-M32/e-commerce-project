@@ -156,7 +156,7 @@ const Cart = () => {
 						})}
 					</div>
 					<div className="check-section">
-						<div className="total-price">total price: ${prices}</div>
+						<div className="total-price">total price: ${Math.round(prices*100)/100}</div>
 						<div className="check-out">check out</div>
 					</div>
 				</div>
