@@ -65,7 +65,7 @@ function Home() {
 						<div className="landing-img">
 							<img
 								className="img-container"
-								src="src\assets\charlesdeluvio-_4K7BwaHUGc-unsplash.jpg"
+								src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/charlesdeluvio-_4K7BwaHUGc-unsplash.jpg"
 								alt=""
 							/>
 						</div>
@@ -80,7 +80,7 @@ function Home() {
 						</div>
 						<div className="m-img">
 							<img
-								src="src\assets\231130_StyleForecast_M__PRODUCT(1).png"
+								src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/231130_StyleForecast_M__PRODUCT(1).png"
 								className="mimg"
 								alt=""
 							/>
@@ -110,7 +110,7 @@ function Home() {
 					<div className="women-img">
 						<img
 							className="wimg"
-							src="src\assets\pexels-lisa-fotios-1107604.jpg"
+							src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/pexels-lisa-fotios-1107604.jpg"
 							alt=""
 						/>
 					</div>
@@ -118,7 +118,7 @@ function Home() {
 				<div className="caro4">
 					<div className="jimg">
 						<img
-							src="src\assets\edgar-soto-o87CUS_uDiQ-unsplash.jpg"
+							src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/edgar-soto-o87CUS_uDiQ-unsplash.jpg"
 							className="ji"
 							alt=""
 						/>
@@ -134,7 +134,7 @@ function Home() {
 				<div className="caro5" >
 
 					<div className="t-img">
-						<img src="src\assets\modern-stationary-collection-arrangement.jpg" className="ti" alt="" />
+						<img src="https://github.com/ahmed-M32/e-commerce-project/blob/main/src/assets/modern-stationary-collection-arrangement.jpg?raw=true" className="ti" alt="" />
 					</div>
 					<div className="t-text">
 						<h1 className="t-h">
