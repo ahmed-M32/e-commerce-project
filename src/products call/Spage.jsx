@@ -11,9 +11,9 @@ import { Toaster, toast } from 'sonner'
 
 
 function Spage() {
-	const { data, ref } = useContext(apiD);
+	const { data, ref,sortedData } = useContext(apiD);
 
-	const { addToLocalStorage, setCartCounter, setCounterState, cartCounter } =
+	const { addToLocalStorage, setCartCounter } =
 		useContext(CartContext);
 	const pid = window.location.href.split("/").reverse()[0];
 
@@ -29,7 +29,7 @@ function Spage() {
 	}
 	};
 
-	
+	console.log(sortedData);
 	return (
 		<>
 			<div className="u">

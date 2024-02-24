@@ -1,17 +1,19 @@
 
 .barr {
 	width: 100%;
-	height: 15%;
+	height: 10vh;
 	display: flex;
 	flex-direction: column;
 }
 .mainNav {
-	height: 50%;
+	height: 10vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
-	box-shadow: 10px 10px 5px rgb(156, 156, 156);
+	background-color: white;
 	justify-content: space-around;
+	z-index: 2222;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 .logo {
 	height: 50px;
@@ -34,8 +36,9 @@
 	border: none;
 }
 .e {
-	color: #e56a77;
+	color: #b8b8b8;
 	font-size: 40px;
+	font-weight:500 ;
 }
 .category {
 	width: 12%;
@@ -107,7 +110,6 @@ width: 40px;
 .searchB{
 	height:100%;
 	width: 5%;
-	background-color: white;
 	border: none;
 	margin: 10px;
 }
@@ -149,3 +151,4 @@ width: 40px;
 .n{
 	display: none;
 }
+

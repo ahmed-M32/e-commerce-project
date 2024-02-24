@@ -5,7 +5,7 @@
 	justify-content: center;
 	padding: 20px;
     gap: none;
-	box-shadow: 5px 5px 10px black;
+	
 }
 .pPage {
 	height: 80%;
@@ -18,18 +18,148 @@
 	height: 100%;
 	width: 100%;
 }
-.filter {
-	width: 20%;
-	height: 50%;
-	background-color: #f6f6f6;
-}
+
 .mProduct{
     display: flex;
     flex-direction: row;
     height: 100%;
     width: 100%;
+	background: rgb(108, 197, 160);
+	background: linear-gradient(
+		319deg,
+		rgba(108, 197, 160, 1) 27%,
+		rgba(31, 41, 44, 1) 62%,
+		rgba(10, 59, 48, 1) 86%
+	);
 
 }
+
 .none{
 	display: none;
+}
+.filter-wrapper{
+	height: 90vh;
+	width: 20%;
+	position: sticky;
+	top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.filter{
+	height: 80%;
+	width: 95%;
+	border-radius: 30px;
+	padding: 20px;
+	z-index: 4;
+	background-color:white ;
+	
+}
+.sort-by{
+	font-weight: 600;
+	font-size: 25px;
+}
+.sorting{
+	display: flex;
+	flex-direction: column;
+	min-height: 80%;
+}
+
+.sort{
+	margin-top :10px;
+	margin-bottom: 10px;
+}
+
+
+.filter-button {
+	background-color: #ffffff;
+	font-size: 15px;
+	width: 40%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	padding: 5px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+}
+
+.filter-button:hover {
+	color: #80bca3;
+}
+.filter-button::before {
+	content: "";
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.filter-button::before {
+	transform: scaleY(0);
+}
+.filter-button:hover::before {
+	transform: scaleY(1);
+}
+
+
+.filter-buttons{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.removefilter {
+	background-color: #ffffff;
+	font-size: 15px;
+	margin: 5px;
+	width: 40%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	padding: 5px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+}
+
+.removefilter:hover {
+	color: #80bca3;
+}
+.removefilter::before {
+	content: "";
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.removefilter::before {
+	transform: scaleY(0);
+}
+.removefilter:hover::before {
+	transform: scaleY(1);
 }

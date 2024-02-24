@@ -1,25 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:opsz@9..40&display=swap");
+
 .mainPage {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	height: fit-content;
-	background-color: #e56a77;
-	overflow: hidden;
+
+	height: 100vh;
+	background-color: #ffffff;
+	overflow-y: scroll;
 	font-weight: 500;
+	scroll-snap-type: y mandatory;
 }
-.gr{
+
+.gr {
 	width: 100%;
 	height: 100%;
+}
+.landing {
+	width: 50%;
+	height: 100%;
+	background: rgb(108, 197, 160);
+	background: linear-gradient(
+		319deg,
+		rgba(108, 197, 160, 1) 27%,
+		rgba(31, 41, 44, 1) 62%,
+		rgba(10, 59, 48, 1) 86%
+	);
+}
+.landing-text {
+	font-family: "Abril Fatface", serif;
+	font-family: "DM Sans", sans-serif;
+	width: 50%;
+	height: 100%;
+	font-size: 50px;
+	margin-left: 100px;
+	font-weight: 700;
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+}
+.lorem {
+	font-size: 20px;
+	width: 60%;
+	color: rgb(69, 69, 69);
+}
+.landing-text2 {
+	width: 50%;
+	margin-top: 100px;
+}
+.landing-img {
+	width: 90%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-container {
+	display: block;
+	height: auto;
+	max-width: 60%;
+}
+.products-button {
+	background-color: #325049;
+	font-size: 30px;
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	border: 1px solid black;
+	padding: 10px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+}
+
+.products-button:hover {
+	color: #80bca3;
+}
+.products-button::before {
+	content: "";
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.products-button::before {
+	transform: scaleY(0);
+}
+.products-button:hover::before {
+	transform: scaleY(1);
+}
+
+.men-image {
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.men-h {
+	height: 100%;
+	width: 50%;
+	background: rgb(184, 184, 184);
+	background: linear-gradient(
+		189deg,
+		rgba(184, 184, 184, 1) 0%,
+		rgba(225, 73, 89, 1) 45%,
+		rgba(255, 255, 255, 1) 100%
+	);
+}
+.m-img {
+	width: 50%;
+	display: flex;
+}
+.landing-text3 {
+	font-family: "Abril Fatface", serif;
+	font-family: "DM Sans", sans-serif;
+	width: 50%;
+	height: 100%;
+	font-size: 50px;
+	margin-left: 100px;
+	font-weight: 700;
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+	margin-top: 50px;
+}
+.mimg {
+	display: block;
+	height: auto;
+	min-width: 100%;
 }
 .caro {
-	height: 100%;
+	height: 90vh;
 	width: 100%;
 	max-width: 100%;
-	overflow: hidden;
+	display: flex;
+	flex-direction: row;
 	align-items: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	scroll-snap-align: start;
 }
+.caro2 {
+	height: 100vh;
+	background-color: white;
+	scroll-snap-align: start;
+}
+.men-page {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50%;
+	width: 100%;
+}
+.men-button {
+	background-color: white;
+	font-size: 30px;
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	border: 2px solid #e14959;
+	padding: 10px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+}
+
+.men-button:hover {
+	color: #ffffff;
+}
+.men-button::before {
+	content: "";
+	background-color: #e14959;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.men-button::before {
+	transform: scaleY(0);
+}
+.men-button:hover::before {
+	transform: scaleY(1);
+}
+
 .ii {
 	height: auto;
 	display: block;
@@ -31,35 +212,280 @@
 	align-items: center;
 }
 
-.productPre{
+.productPre {
 	gap: 30px;
 	width: 100%;
 	justify-content: center;
 	overflow: hidden;
-    background-color: #e56a77;
-
+	background-color: #e56a77;
 }
-.gr{
+.gr {
 	display: grid;
 }
-.gap{
+.gap {
 	height: 200px;
 	width: 100%;
 	background-color: white;
 }
-.swiper-slide{
+.swiper-slide {
 	height: auto !important;
 }
-.text{
+.text {
 	font-size: 40px;
-	background-color: aliceblue;
+	background-color: #e56a77;
 }
 
-.load
-{
+.load {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	width: 100%;
+}
+
+.caro3 {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	scroll-snap-align: start;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		287deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(67, 133, 162, 1) 100%
+	);
+}
+.women-img {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.wimg {
+	max-height: 100%;
+	width: auto;
+	object-fit: contain;
+	display: block;
+}
+.women-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 100px;
+	width: 50%;
+	color: rgb(223, 223, 214);
+}
+.women-t {
+	display: flex;
+	align-items: center;
+	font-size: 60px;
+}
+.women-button {
+	background-color: white;
+	font-size: 30px;
+	width: 45%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	border: 2px solid #000000;
+	padding: 10px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+	color: #000000;
+	font-weight: 600;
+}
+
+.women-button:hover {
+	color: #ffffff;
+}
+.women-button::before {
+	content: "";
+	background-color: #000000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.women-button::before {
+	transform: scaleY(0);
+}
+.women-button:hover::before {
+	transform: scaleY(1);
+}
+
+.women-text p {
+	color: white;
+}
+
+.caro4{
+	height: 100vh;
+	scroll-snap-align: start;
+
+}
+
+.jimg{
+	width: 100%;
+	height: 50%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background: rgb(0,0,0);
+	background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(29,33,48,1) 50%); 
+}
+
+.ji{
+	object-fit: cover;
+	display: block;
+	max-height: 100%;
+	align-items: center;
+}
+
+.j-text{
+	color: rgba(29,33,48,1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.jtext{
+	font-size: 60px;
+}
+
+.j-button {
+	background-color: white;
+	font-size: 30px;
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+
+	border: 2px solid rgba(29,33,48,1);
+	padding: 10px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+	color: #000000;
+	font-weight: 600;
+}
+
+.j-button:hover {
+	color: #ffffff;
+}
+.j-button::before {
+	content: "";
+	background-color: rgba(29,33,48,1);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.j-button::before {
+	transform: scaleY(0);
+}
+.j-button:hover::before {
+	transform: scaleY(1);
+}
+
+
+
+.caro5{
+	height: 100vh;
+	scroll-snap-align: start;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+}
+.t-img{
+	width: 50%;
+	height: 100%;
+	
+}
+.t-text{
+	width: 50%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 100px;
+}
+.ti{
+	max-height: 100%;
+	object-fit: contain;
+	display: block;
+	height: auto;
+}
+
+.lorem2{
+	width: 70%;
+	font-size: 20px;
+	display: flex;
+	margin-right: 220px;
+	text-align: center;
+}
+.t-h{
+	font-size: 60px;
+	font-weight: 500;
+	margin-right: 220px;
+}
+.t-button {
+	background-color: white;
+	font-size: 30px;
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	margin-right: 220px;
+	border: 2px solid rgba(29,33,48,1);
+	padding: 10px;
+	z-index: 1;
+	position: relative;
+	transition: color 0.2s linear;
+	cursor: pointer;
+	color: #000000;
+	font-weight: 600;
+}
+
+.t-button:hover {
+	color: #f1b314;
+}
+.t-button::before {
+	content: "";
+	background-color: rgba(29,33,48,1);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.5s linear;
+	transform-origin: 0 0;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.t-button::before {
+	transform: scaleY(0);
+}
+.t-button:hover::before {
+	transform: scaleY(1);
 }

@@ -45,7 +45,6 @@ function Navbar() {
 							alt=""
 							className="logo"
 						/>
-						<span className="e">E</span>-Shop
 					</Link>
 				</div>
 				<div className="search">
@@ -83,38 +82,7 @@ function Navbar() {
 					</Link>
 				</div>
 			</div>
-			<div className="secBar">
-				<div className="cats1">
-					<ul className="cats">
-						<li>
-							<Link to={"e-commerce-project/products"} className="l">
-								Products
-							</Link>
-						</li>
-						<li>
-							{" "}
-							<Link to={"e-commerce-project/men"} className="l">
-								Men's Clothing
-							</Link>
-						</li>
-						<li>
-							<Link to={"e-commerce-project/women"} className="l">
-								Women's Clothing
-							</Link>
-						</li>
-						<li>
-							<Link to={"e-commerce-project/tech"} className="l">
-								Electronics
-							</Link>
-						</li>
-						<li>
-							<Link to={"e-commerce-project/jewelery"} className="l">
-								Jewelery
-							</Link>
-						</li>
-					</ul>
-				</div>
-			</div>
+			
 		</div>
 	);
 }
