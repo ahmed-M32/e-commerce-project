@@ -49,6 +49,7 @@ function Home() {
 	return (
 		<>
 			<div className="mainPage main">
+				
 				<div className="caro">
 					<div className="landing-text">
 						<h1 className="landing-text2">discover a world of new brands</h1>
@@ -141,7 +142,7 @@ function Home() {
 							tech products
 						</h1>
 						<p className="lorem2">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias veritatis incidunt ipsa eveniet iure quae dignissimos culpa fugit explicabo consectetur asperiores, rem sequi magni unde nobis eligendi error aut nihil laborum. Ratione, aspernatur distinctio placeat voluptate, eos, quam sunt accusantium adipisci suscipit optio consectetur deserunt accusamus corporis mollitia nam quaerat?
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias veritatis incidunt ipsa eveniet iure quae dignissimos culpa fugit explicabo 
 						</p>
 						<div className="t-button">
 							<Link to={"tech/"}>

@@ -22,7 +22,7 @@ function Women() {
 	}
 
 	if (isError) {
-		return <p>Error: {error.message}</p>;
+		return <p>Error: {isError.message}</p>;
 	}
 
 	if (!data) {

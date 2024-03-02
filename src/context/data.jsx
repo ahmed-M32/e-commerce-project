@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import SyncLoader from "react-spinners/SyncLoader";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 const apiD = createContext();
 
@@ -12,6 +12,12 @@ const DataProvider = ({ children }) => {
 	const [filtered, setFilters] = useState(false);
 	const [SortedData,setSortedData] = useState([]);
 
+
+
+
+
+
+	
 	const getData = () => {
 		return axios.get("https://fakestoreapi.com/products").then((res) => {
 			const result = res.data;
