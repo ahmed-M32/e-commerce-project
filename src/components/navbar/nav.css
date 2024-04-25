@@ -24,7 +24,6 @@
 	justify-content:space-around;
 	width: 40%;
 	height: 40%;
-	/*padding-left: 150px;*/
 	align-items: center;
 	border: gray 1px solid;
 	border-radius: 90px;
@@ -45,13 +44,11 @@
 	display: flex;
 	height: 50%;
 	align-items: center;
-	/*padding-left: 300px;*/
 }
 .arrow {
 	height: 30px;
 	width: 30px;
 	transform: rotate(180 deg);
-	/*padding-left: 20px;*/
 }
 
 .category:hover + .secBar {
@@ -119,8 +116,8 @@ width: 40px;
 	justify-content: center;
 }
 .searchi{
-	height: 20px;
-	width: 20px;
+	height: 30px;
+	width: 50px;
 }
 
 .l1{
