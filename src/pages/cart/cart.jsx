@@ -76,17 +76,23 @@ const Cart = () => {
 				</div>
 				<div className="titlee"> {title}</div>
 				<div className="cart-price">price : ${price}</div>
-				<button className="add-button" onClick={increment}>
-					+
-				</button>
-				<div className="quantity"> quantity : {counter}</div>
-				<button className="remove-button" onClick={decrement}>
-					-
-				</button>
-				<button className="delete" onClick={deleteItem}>
-					remove
-					<FaRegTrashAlt></FaRegTrashAlt>
-				</button>
+				<div className="button-container">
+					<div className="add-container">
+						<button className="add-button" onClick={increment}>
+							+
+						</button>
+						<div className="quantity"> quantity : {counter}</div>
+						<button className="remove-button" onClick={decrement}>
+							-
+						</button>
+					</div>
+
+					<div className="delete-container">
+						<button className="delete" onClick={deleteItem}>
+							<FaRegTrashAlt></FaRegTrashAlt>
+						</button>
+					</div>
+				</div>
 			</div>
 		);
 	};
@@ -149,14 +155,18 @@ const Cart = () => {
 				<div className="total-items">
 					<span className="main-title"> Total items </span>
 					<div className="item-view">
-						{uniqueA.map((item)=>{
-							return(<div className="check-out-item">
-								{obj[item.title]} X {item.price}
-							</div>)
+						{uniqueA.map((item) => {
+							return (
+								<div className="check-out-item">
+									{obj[item.title]} X {item.price}
+								</div>
+							);
 						})}
 					</div>
 					<div className="check-section">
-						<div className="total-price">total price: ${Math.round(prices*100)/100}</div>
+						<div className="total-price">
+							total price: ${Math.round(prices * 100) / 100}
+						</div>
 						<div className="check-out">check out</div>
 					</div>
 				</div>

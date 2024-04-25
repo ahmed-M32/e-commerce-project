@@ -1,0 +1,21 @@
+.search-product{
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(50%, 250px), 1fr));
+	justify-content: center;
+	padding: 20px;
+	justify-items: center;
+    
+}
+
+.no-result{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	font-size: xx-large;
+	font-weight: 600;
+}
+
+

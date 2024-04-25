@@ -49,7 +49,6 @@ function Home() {
 	return (
 		<>
 			<div className="mainPage main">
-				
 				<div className="caro">
 					<div className="landing-text">
 						<h1 className="landing-text2">discover a world of new brands</h1>
@@ -59,7 +58,10 @@ function Home() {
 							porro harum autem, magni ad, voluptates reprehenderit tempore
 							saepe eveniet amet placeat accusamus?
 						</p>
-						<div className="products-button"> <Link to ={"products/"}>see our products</Link></div>
+						<div className="products-button">
+							{" "}
+							<Link to={"products/"}>see our products</Link>
+						</div>
 					</div>
 					<></>
 					<div className="landing">
@@ -78,19 +80,20 @@ function Home() {
 							<h1 className="landing-text3">
 								we have a huge collection for men
 							</h1>
+							<div className="men-page">
+							<div className="men-button">
+								{" "}
+								<Link to={"men/"}>see the men's collection</Link>
+							</div>
 						</div>
+						</div>
+						
 						<div className="m-img">
 							<img
 								src="https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/main/src/assets/231130_StyleForecast_M__PRODUCT(1).png"
 								className="mimg"
 								alt=""
 							/>
-						</div>
-					</div>
-					<div className="men-page">
-						<div className="men-button">
-							{" "}
-							<Link to={"men/"}>see the men's collection</Link>
 						</div>
 					</div>
 				</div>
@@ -132,24 +135,23 @@ function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="caro5" >
-
+				<div className="caro5">
 					<div className="t-img">
-						<img src="https://github.com/ahmed-M32/e-commerce-project/blob/main/src/assets/modern-stationary-collection-arrangement.jpg?raw=true" className="ti" alt="" />
+						<img
+							src="https://github.com/ahmed-M32/e-commerce-project/blob/main/src/assets/modern-stationary-collection-arrangement.jpg?raw=true"
+							className="ti"
+							alt=""
+						/>
 					</div>
 					<div className="t-text">
-						<h1 className="t-h">
-							tech products
-						</h1>
+						<h1 className="t-h">tech products</h1>
 						<p className="lorem2">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias veritatis incidunt ipsa eveniet iure quae dignissimos culpa fugit explicabo 
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+							veritatis incidunt ipsa eveniet iure quae dignissimos culpa fugit
+							explicabo
 						</p>
 						<div className="t-button">
-							<Link to={"tech/"}>
-							view tech products 
-
-							</Link>
-
+							<Link to={"tech/"}>view tech products</Link>
 						</div>
 					</div>
 				</div>

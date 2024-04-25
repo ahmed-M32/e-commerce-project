@@ -4,6 +4,8 @@ import { apiD } from "../../context/data";
 import "../../index.css";
 import "./men.css";
 import SyncLoader from "react-spinners/SyncLoader";
+import { HiArrowSmallDown } from "react-icons/hi2";
+
 import Product from "../../products call/products";
 
 function Men() {
@@ -34,13 +36,24 @@ function Men() {
 	function handleremove() {
 		setFilters(false);
 	}
-	console.log(data);
+	function makeResponsive() {
+		let parent = document.querySelector(".filter");
+		if (window.innerWidth < 600) {
+			parent.classList.toggle("res");
+			document.querySelector(".sort-by").classList.toggle("res-sort");
+			parent.lastElementChild.classList.toggle("rotate");
+			for (let i = 1; i < parent.children.length - 1; i++) {
+				parent.children[0].classList.toggle("res-sort");
+				parent.children[i].classList.toggle("responsive");
+			}
+		}
+	}
 	return (
-		<div className="men-page-1 container w-full flex h-full flex-row">
+		<div className="men-page-1 ">
 			<div className="filter-wrapper">
-				<div className="filter">
+				<div className="filter responsive-filter case">
 					<div className="sort-by">Sort by</div>
-					<div className="sorting">
+					<div className="sorting responsive">
 						<div className="sort">
 							<input
 								type="radio"
@@ -78,7 +91,7 @@ function Men() {
 							price desc
 						</div>
 					</div>
-					<div className="filter-buttons">
+					<div className="filter-buttons responsive">
 						<div className="men-filter-button" onClick={SortItems}>
 							Sort
 						</div>
@@ -86,9 +99,12 @@ function Men() {
 							Remove
 						</div>
 					</div>
+					<div className="res-button" onClick={makeResponsive}>
+						<HiArrowSmallDown className="reponsive" />
+					</div>
 				</div>
 			</div>
-			<div className="grid w-full h-fit lg:grid-cols-5 sm:grid-cols-2 xl:grid-cols-4 ">
+			<div className="prod">
 				{filtered && SortedData.length !== 0
 					? SortedData.map((product) => {
 							return product.category === "men's clothing" ? (

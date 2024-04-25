@@ -11,7 +11,7 @@
 }
 
 .pPage .pimg {
-	height: 60%;
+	min-height: 60%;
 }
 .pPage a {
 	height: 100%;
@@ -53,7 +53,6 @@
 	background-color: white;
 }
 .sort-by {
-	width: 50%;
 	font-weight: 600;
 	font-size: 25px;
 }
@@ -159,6 +158,9 @@
 }
 
 @media (max-width:600px){
+	.pPage{
+		height: 80%;
+	}
 	.responsive{
 		display: none;
 	}

@@ -1,26 +1,33 @@
-.tech-page-1{
-    min-height: 90vh;
-    background: #f3b618;
-	
+.tech-page-1 {
+	min-height: 90vh;
+	background: #f3b618;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: row;
 }
-
-
-
+.tech-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(50%, 250px), 1fr));
+	justify-content: center;
+	padding: 20px;
+	justify-items: center;
+	width: 80%;
+}
 
 .tech-filter-button {
 	background-color: white;
 	font-size: 15px;
 	width: 40%;
-    height: 10%;
+	height: 10%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-top: 30px;
 	border: 2px solid #000000;
 	padding: 5px;
-    margin: 5px;
+	margin: 5px;
 	z-index: 1;
-    color: #000000;
+	color: #000000;
 	position: relative;
 	transition: color 0.2s linear;
 	cursor: pointer;
@@ -31,7 +38,7 @@
 }
 .tech-filter-button::before {
 	content: "";
-	background-color: rgba(29,33,48,1);
+	background-color: rgba(29, 33, 48, 1);
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -49,4 +56,74 @@
 }
 .tech-filter-button:hover::before {
 	transform: scaleY(1);
+}
+
+
+@media (max-width: 600px) {
+	.tech-page-1{
+		flex-direction: column;
+		padding-top: 30px;
+	}
+	.tech-grid{
+		width: 100%;
+	}
+	.responsive {
+		display: none;
+	}
+	.mProduct {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: 30px;
+	}
+	.filter-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 30%;
+		z-index: 3;
+	}
+
+	.responsive-filter {
+		width: 90%;
+
+		.prod {
+			grid-template-columns: repeat(auto-fit, minmax(min(50%, 450px), 1fr));
+			width: 100%;
+		}
+	}
+	.product {
+		width: 90%;
+		margin: 10;
+	}
+	.res-sort {
+		width: 50%;
+	}
+	.res-child {
+		display: none;
+	}
+	.res-button {
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.arrow {
+		width: 100%;
+		height: 100%;
+	}
+	.rotate {
+		transform: rotate(180deg);
+	}
+	.case {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.res {
+		display: block;
+	}
 }

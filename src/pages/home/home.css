@@ -105,14 +105,14 @@
 }
 
 .men-image {
-	height: 50%;
+	height: 100%;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
 }
 .men-h {
-	height: 100%;
-	width: 50%;
+	height: 50%;
+	width: 100%;
 	background: rgb(184, 184, 184);
 	background: linear-gradient(
 		189deg,
@@ -120,6 +120,8 @@
 		rgba(225, 73, 89, 1) 45%,
 		rgba(255, 255, 255, 1) 100%
 	);
+	display: flex;
+	flex-direction: column;
 }
 .m-img {
 	width: 50%;
@@ -128,15 +130,16 @@
 .landing-text3 {
 	font-family: "Abril Fatface", serif;
 	font-family: "DM Sans", sans-serif;
-	width: 50%;
-	height: 100%;
+	width: 100%;
+	height: 20%;
 	font-size: 50px;
-	margin-left: 100px;
+	
 	font-weight: 700;
 	display: flex;
 	justify-content: left;
 	flex-direction: column;
-	margin-top: 50px;
+	text-align: center;
+
 }
 .mimg {
 	display: block;
@@ -162,7 +165,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 50%;
+	height: 33%;
 	width: 100%;
 }
 .men-button {
@@ -542,15 +545,18 @@
 		display: none;
 	}
 	.men-image{
-		flex-direction: column;
+		flex-direction: column-reverse;
 		width: 100%;
-		height: 50%;
+		height: 100%;
 		margin: 0;
+		align-items: center;
+		justify-content: space-evenly;
 	}
 	.m-img{
 		width: 100%;
 	}
 	.men-h{
+		height: 50%;
 		width: 100%;
 		font-size: .1rem;
 		display: flex;
@@ -562,6 +568,7 @@
 		margin-top: 50px;
 		font-size: 2rem;
 		width: 90%;
+		height: 40%;
 		text-align: center;
 	}
 	.men-page{

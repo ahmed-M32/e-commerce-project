@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Product from "../../products call/products";
+import './search.css'
 import { SearchProduct } from "../../context/search-context/search";
 
 const SearchBarr = () => {
@@ -10,7 +11,6 @@ const SearchBarr = () => {
 	useEffect(() => {
 		if (data.length > 0) {
 			if (!isInitialMount.current) {
-				console.log("Effect is running because data changed");
 			} else {
 				isInitialMount.current = false;
 			}
@@ -19,9 +19,8 @@ const SearchBarr = () => {
 		return () => {};
 	}, [data]);
 
-	//	console.log(data[0].title);
 	if (data.length == 0) {
-		return <div> no Results</div>;
+		return <div className="no-result"> no Results</div>;
 	} else {
 		return (
 			<>
