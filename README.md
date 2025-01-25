@@ -8,10 +8,10 @@
 - Search: Search for products by categories and name.
 - Sorting: Sort products by price or rating.
 # Technologies Used
-## - ReactJs
-## - CSS
-## - React Context for data Binding
-## - Some React Libraries for Loading effects, image sliders.
+- ReactJs
+- CSS
+- React Context for data Binding
+- Some React Libraries for Loading effects, image sliders.
 
 
 
