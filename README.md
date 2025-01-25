@@ -3,6 +3,8 @@
 
 
 ![alt text](https://raw.githubusercontent.com/ahmed-M32/e-commerce-project/refs/heads/main/Screenshot%202025-01-25%20135256.png)
+# Live
+https://ahmed-m32.github.io/e-commerce-project/
 # Features
 - Cart Functionality: Add, remove, and update items in the cart.
 - Search: Search for products by categories and name.
