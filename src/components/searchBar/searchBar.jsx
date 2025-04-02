@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Product from "../../products call/products";
-import './search.css'
+import "./search.css";
 import { SearchProduct } from "../../context/search-context/search";
 
 const SearchBarr = () => {

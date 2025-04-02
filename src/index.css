@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Styles */
+@layer components {
+  .filter-panel .filter-content {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .filter-panel.show-filter .filter-content {
+    @apply block sm:block;
+  }
+
+  /* Product Grid Image Aspect Ratio */
+  .aspect-w-1 {
+    position: relative;
+    padding-bottom: 100%;
+  }
+
+  .aspect-w-1 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  /* Cart Item Styles */
+  .cart-item-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  .cart-item-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .cart-item-exit {
+    opacity: 1;
+  }
+
+  .cart-item-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+}

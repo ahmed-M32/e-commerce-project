@@ -1,11 +1,11 @@
 import React from "react";
-import { apiD } from "../context/data";
 import { useContext } from "react";
+import { apiD } from "../../context/data";
 import { HiArrowSmallDown, HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { BeatLoader } from "react-spinners";
-import Product from "./products";
+import Product from "../../products call/products";
 
-function Page() {
+function Electronics() {
 	const {
 		data,
 		SortedData,
@@ -43,9 +43,10 @@ function Page() {
 	};
 
 	const products = filtered && SortedData.length !== 0 ? SortedData : data;
+	const electronicProducts = products.filter(p => p.category === "electronics");
 
 	return (
-		<div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+		<div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
 			{/* Filter Panel */}
 			<div className="max-w-7xl mx-auto">
 				<div className="bg-white rounded-xl shadow-sm mb-8">
@@ -131,7 +132,7 @@ function Page() {
 
 				{/* Products Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-					{products.map((product) => (
+					{electronicProducts.map((product) => (
 						<Product
 							key={product.id}
 							path={`/e-commerce-project/products/${product.id}`}
@@ -144,7 +145,7 @@ function Page() {
 				</div>
 
 				{/* Empty State */}
-				{products.length === 0 && (
+				{electronicProducts.length === 0 && (
 					<div className="text-center py-12">
 						<p className="text-gray-500">No products found.</p>
 					</div>
@@ -154,4 +155,4 @@ function Page() {
 	);
 }
 
-export default Page;
+export default Electronics;
