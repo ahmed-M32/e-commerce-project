@@ -19,7 +19,7 @@ function Women() {
 
 	if (isLoading) {
 		return (
-			<div className="flex items-center justify-center min-h-screen">
+			<div className="w-full flex items-center justify-center min-h-[calc(100vh-4rem)]">
 				<BeatLoader color="#0ea5e9" />
 			</div>
 		);
@@ -27,7 +27,7 @@ function Women() {
 
 	if (isError) {
 		return (
-			<div className="flex items-center justify-center min-h-screen text-red-500">
+			<div className="w-full flex items-center justify-center min-h-[calc(100vh-4rem)] text-red-500">
 				Error: {error.message}
 			</div>
 		);
