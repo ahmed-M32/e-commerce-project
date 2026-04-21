@@ -11,6 +11,7 @@ function Women() {
 		SortedData,
 		isLoading,
 		isError,
+		error,
 		SortItems,
 		setFilter,
 		filtered,

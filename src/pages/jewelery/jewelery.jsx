@@ -14,13 +14,18 @@ function Jewelery() {
 		SortedData,
 		isLoading,
 		isError,
+		error,
 		SortItems,
 		setFilter,
 		filtered,
 		setFilters,
 	} = useContext(apiD);
 	if (isLoading) {
-		return <SyncLoader></SyncLoader>;
+		return (
+			<div className="w-full flex items-center justify-center min-h-[calc(100vh-4rem)]">
+				<SyncLoader color="#0ea5e9" />
+			</div>
+		);
 	}
 
 	if (isError) {

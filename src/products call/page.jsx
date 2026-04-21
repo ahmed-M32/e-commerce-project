@@ -11,6 +11,7 @@ function Page() {
 		SortedData,
 		isLoading,
 		isError,
+		error,
 		SortItems,
 		setFilter,
 		filtered,

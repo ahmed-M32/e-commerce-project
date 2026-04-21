@@ -11,6 +11,7 @@ function Men() {
 		SortedData,
 		isLoading,
 		isError,
+		error,
 		SortItems,
 		setFilter,
 		filtered,

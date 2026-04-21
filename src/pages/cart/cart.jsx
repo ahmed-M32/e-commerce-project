@@ -6,7 +6,7 @@ import { Toaster, toast } from "sonner";
 
 const CartItem = ({ img, title, id, price, quantity, product, onQuantityChange, onDelete }) => {
 	return (
-		<div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+		<div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-sm overflow-hidden">
 			<Link 
 				to={`/e-commerce-project/products/${id}`}
 				className="relative w-24 h-24 sm:w-32 sm:h-32 overflow-hidden rounded-lg bg-gray-100 flex-shrink-0"
@@ -18,15 +18,15 @@ const CartItem = ({ img, title, id, price, quantity, product, onQuantityChange, 
 				/>
 			</Link>
 			
-			<div className="flex-1 min-w-0">
-				<h3 className="text-sm font-medium text-gray-900 truncate">
+			<div className="flex-1 min-w-0 w-full">
+				<h3 className="text-sm font-medium text-gray-900 break-words">
 					{title}
 				</h3>
 				<p className="mt-1 text-sm text-gray-500">
 					${price}
 				</p>
 				
-				<div className="mt-4 flex items-center gap-4">
+				<div className="mt-4 flex flex-wrap items-center gap-4">
 					<div className="flex items-center rounded-lg border border-gray-200">
 						<button
 							onClick={() => onQuantityChange(product, "decrement")}
@@ -57,7 +57,7 @@ const CartItem = ({ img, title, id, price, quantity, product, onQuantityChange, 
 				</div>
 			</div>
 			
-			<div className="text-right">
+			<div className="w-full sm:w-auto sm:text-right">
 				<p className="text-sm font-medium text-gray-900">
 					${(price * quantity).toFixed(2)}
 				</p>
@@ -92,7 +92,7 @@ const Cart = () => {
 			cartItems.push(product);
 			toast.success("Item quantity increased");
 		} else {
-			const index = cartItems.findIndex(item => item.title === product.title);
+			const index = cartItems.findIndex(item => item.id === product.id);
 			if (index !== -1) {
 				cartItems.splice(index, 1);
 				toast("Item quantity decreased");
@@ -106,8 +106,8 @@ const Cart = () => {
 	};
 
 	const handleDelete = (product) => {
-		const cartItems = JSON.parse(localStorage.getItem("cart"));
-		const updatedItems = cartItems.filter(item => item.title !== product.title);
+		const cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
+		const updatedItems = cartItems.filter(item => item.id !== product.id);
 		
 		localStorage.setItem("cart", JSON.stringify(updatedItems));
 		setItems(updatedItems);
@@ -116,13 +116,13 @@ const Cart = () => {
 		toast.warning("Item removed from cart");
 	};
 
-	const getItemQuantity = (title) => {
-		return items.filter(item => item.title === title).length;
+	const getItemQuantity = (id) => {
+		return items.filter(item => item.id === id).length;
 	};
 
 	const uniqueItems = Object.values(
 		items.reduce((acc, item) => {
-			acc[item.title] = item;
+			acc[item.id] = item;
 			return acc;
 		}, {})
 	);
@@ -142,7 +142,7 @@ const Cart = () => {
 							title={item.title}
 							id={item.id}
 							price={item.price}
-							quantity={getItemQuantity(item.title)}
+							quantity={getItemQuantity(item.id)}
 							product={item}
 							onQuantityChange={handleQuantityChange}
 							onDelete={handleDelete}
@@ -168,9 +168,11 @@ const Cart = () => {
 						
 						<div className="space-y-2">
 							{uniqueItems.map(item => (
-								<div key={item.id} className="flex justify-between text-sm text-gray-600">
-									<span>{getItemQuantity(item.title)} x {item.title}</span>
-									<span>${(item.price * getItemQuantity(item.title)).toFixed(2)}</span>
+								<div key={item.id} className="flex items-start justify-between gap-4 text-sm text-gray-600">
+									<span className="min-w-0 break-words">
+										{getItemQuantity(item.id)} x {item.title}
+									</span>
+									<span>${(item.price * getItemQuantity(item.id)).toFixed(2)}</span>
 								</div>
 							))}
 							

@@ -11,6 +11,7 @@ function Jewelry() {
 		SortedData,
 		isLoading,
 		isError,
+		error,
 		SortItems,
 		setFilter,
 		filtered,

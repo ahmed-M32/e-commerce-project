@@ -2,19 +2,38 @@ import React, { useContext, useEffect } from "react";
 import { apiD } from "../context/data";
 import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CartContext } from "../context/cart-context";
 import { Toaster, toast } from "sonner";
 
 function Spage() {
 	const { data, ref } = useContext(apiD);
 	const { addToLocalStorage, setCartCounter } = useContext(CartContext);
-	const pid = window.location.href.split("/").reverse()[0];
-	const product = data[pid - 1];
+	const { productid } = useParams();
+	const pid = Number(productid);
+	const product = Array.isArray(data) ? data.find((p) => p.id === pid) : undefined;
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
+	if (!product) {
+		return (
+			<div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+				<div className="max-w-7xl mx-auto">
+					<div className="bg-white rounded-2xl shadow-card p-8">
+						<p className="text-gray-700">Product not found.</p>
+						<Link
+							to="/e-commerce-project/products"
+							className="inline-block mt-4 text-primary-600 hover:text-primary-500"
+						>
+							Back to products
+						</Link>
+					</div>
+				</div>
+			</div>
+		);
+	}
 
 	const rating = product.rating.rate.toString().split(".");
 	if (rating.length === 1) {
