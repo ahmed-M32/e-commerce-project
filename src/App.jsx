@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar } from "./components/navbar/nav";
 import Home from "./pages/home/home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Page from "./products call/page.jsx";
 import Spage from "./products call/Spage.jsx";
 import { DataProvider } from "./context/data.jsx";
@@ -19,10 +19,21 @@ import Cart from "./pages/cart/cart.jsx";
 
 const client1 = new QueryClient();
 
+function ScrollToTop() {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return null;
+}
+
 function App() {
 	return (
 		<QueryClientProvider client={client1}>
 			<BrowserRouter>
+				<ScrollToTop />
 				<MyContextProvider>
 					<CartContextProvider>
 						<DataProvider>

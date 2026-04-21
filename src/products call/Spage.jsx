@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { apiD } from "../context/data";
 import Stars from "./star";
 import { FaCartPlus } from "react-icons/fa6";
@@ -11,6 +11,10 @@ function Spage() {
 	const { addToLocalStorage, setCartCounter } = useContext(CartContext);
 	const pid = window.location.href.split("/").reverse()[0];
 	const product = data[pid - 1];
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const rating = product.rating.rate.toString().split(".");
 	if (rating.length === 1) {
@@ -38,6 +42,8 @@ function Spage() {
 								<img 
 									src={product.image} 
 									alt={product.title}
+									decoding="async"
+									fetchpriority="high"
 									className="h-full w-full object-contain object-center hover:scale-105 transition-transform duration-500"
 								/>
 							</div>

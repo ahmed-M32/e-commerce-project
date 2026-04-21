@@ -12,6 +12,8 @@ function Product({ path, img, price, title }) {
 				<img 
 					src={img} 
 					alt={title}
+					loading="lazy"
+					decoding="async"
 					className="w-[70%] h-auto object-contain group-hover:scale-105 transition-transform duration-500"
 				/>
 				<div className="absolute top-2 right-2">

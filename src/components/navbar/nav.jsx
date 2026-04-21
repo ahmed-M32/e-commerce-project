@@ -36,7 +36,7 @@ function Navbar() {
 	return (
 		<nav className="sticky top-0 z-50 bg-white shadow-card backdrop-blur-lg bg-opacity-90">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex justify-between items-center h-16">
+				<div className="flex flex-wrap justify-between items-center gap-3 py-3 sm:py-0 sm:h-16">
 					<div className="flex-shrink-0">
 						<Link to="/e-commerce-project/" className="flex items-center">
 							<img
@@ -50,7 +50,7 @@ function Navbar() {
 						</Link>
 					</div>
 
-					<div className="flex-1 max-w-2xl mx-8">
+					<div className="order-3 w-full sm:order-none sm:flex-1 sm:max-w-2xl sm:mx-8">
 						<div className="relative">
 							<input
 								type="text"
